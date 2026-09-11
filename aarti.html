@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>आरती वाचा — आरती संग्रहालय</title>
+<meta name="theme-color" content="#0B0A09" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<header class="reader-header">
+  <div class="container">
+    <a href="list.html" class="icon-btn" aria-label="मागे जा">
+      <i data-lucide="arrow-left"></i>
+    </a>
+    <span class="aarti-name" data-aarti-title>आरती</span>
+    <div class="header-actions">
+      <button class="icon-btn fav-btn" data-fav-toggle-header aria-label="आवडती चिन्हांकित करा" aria-pressed="false"></button>
+      <button class="icon-btn" data-open-sheet aria-label="अधिक पर्याय">
+        <i data-lucide="more-vertical"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="verse-indicator" data-verse-indicator aria-live="polite">
+  <span class="dot" aria-hidden="true"></span>
+  <span data-indicator-text>कडवा १ / १</span>
+</div>
+
+<main data-reader-root>
+  <div class="reader-intro">
+    <p class="invocation">॥ श्री गणेश ॥</p>
+    <h1 data-intro-title>आरती</h1>
+    <p class="deity-tag" data-intro-deity>देवता</p>
+  </div>
+
+  <div class="reader-toolbar">
+    <div class="mode-toggle" role="group" aria-label="वाचन मोड">
+      <button data-reading-mode="normal">सामान्य</button>
+      <button data-reading-mode="focus">फोकस</button>
+    </div>
+  </div>
+
+  <div class="container reader-body" data-reader-body>
+    <nav class="verse-rail" data-verse-rail aria-label="कडवा सूची"></nav>
+    <div class="verses-wrap" data-verses-wrap></div>
+  </div>
+
+  <div class="reader-end container">
+    <p class="om">ॐ</p>
+    <p>॥ शुभं भवतु ॥</p>
+  </div>
+</main>
+
+<div class="control-bar">
+  <button data-font-decrease aria-label="अक्षर आकार कमी करा">A−</button>
+  <button data-font-reset aria-label="अक्षर आकार सामान्य करा">Aa</button>
+  <button data-font-increase aria-label="अक्षर आकार वाढवा">A+</button>
+  <span class="divider" aria-hidden="true"></span>
+  <button data-audio-toggle aria-label="ऑडिओ ऐका"><i data-lucide="volume-2"></i></button>
+  <button data-fav-toggle-bar aria-label="आवडती चिन्हांकित करा" aria-pressed="false"></button>
+  <button data-open-sheet aria-label="अधिक पर्याय"><i data-lucide="more-horizontal"></i></button>
+</div>
+
+<div class="sheet-backdrop" data-sheet-backdrop></div>
+<div class="sheet" data-sheet role="dialog" aria-label="अधिक पर्याय">
+  <div class="sheet-handle"></div>
+  <p style="padding:4px 6px 8px; font-size:0.8rem; color:var(--text-muted);">अक्षर आकार</p>
+  <div class="font-size-options">
+    <button data-font-option="small">लहान</button>
+    <button data-font-option="normal">सामान्य</button>
+    <button data-font-option="large">मोठे</button>
+    <button data-font-option="xlarge">अतिमोठे</button>
+  </div>
+  <button class="sheet-item" data-share-aarti>
+    <i data-lucide="share-2"></i> ही आरती शेअर करा
+  </button>
+  <button class="sheet-item" data-close-sheet>
+    <i data-lucide="x"></i> बंद करा
+  </button>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="data/aartis.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+<script src="js/reader.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (window.lucide) lucide.createIcons();
+  });
+</script>
+</body>
+</html>

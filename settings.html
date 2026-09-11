@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>सेटिंग्ज — आरती संग्रहालय</title>
+<meta name="theme-color" content="#0B0A09" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="om">ॐ</span> आरती संग्रहालय</a>
+    <nav class="main-nav" aria-label="मुख्य दुवे">
+      <a data-nav-link href="index.html">मुख्यपृष्ठ</a>
+      <a data-nav-link href="list.html">आरत्या</a>
+      <a data-nav-link href="categories.html">श्रेणी</a>
+      <a data-nav-link href="favorites.html">आवडत्या</a>
+      <a data-nav-link href="settings.html">सेटिंग्ज</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn menu-toggle" data-menu-toggle aria-label="मेनू उघडा" aria-expanded="false" aria-controls="mobile-menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav id="mobile-menu" class="mobile-menu" data-menu-panel aria-label="मोबाइल मेनू">
+  <ul>
+    <li><a data-nav-link href="index.html">मुख्यपृष्ठ</a></li>
+    <li><a data-nav-link href="list.html">आरत्या</a></li>
+    <li><a data-nav-link href="categories.html">श्रेणी</a></li>
+    <li><a data-nav-link href="favorites.html">आवडत्या</a></li>
+    <li><a data-nav-link href="settings.html">सेटिंग्ज</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="container" style="max-width:640px;">
+    <header class="page-header" data-entrance>
+      <h1>सेटिंग्ज</h1>
+      <p>वाचन अनुभव तुमच्या पसंतीनुसार बदला</p>
+    </header>
+
+    <section style="margin-top:26px;" data-entrance>
+      <div class="settings-group">
+        <div class="settings-row">
+          <div>
+            <p class="row-label">अक्षर आकार</p>
+            <p class="row-desc">आरती वाचनासाठी डिफॉल्ट अक्षर आकार</p>
+          </div>
+          <div class="segmented" data-font-segmented>
+            <button data-font-option="small">लहान</button>
+            <button data-font-option="normal">सामान्य</button>
+            <button data-font-option="large">मोठे</button>
+            <button data-font-option="xlarge">अतिमोठे</button>
+          </div>
+        </div>
+        <div class="settings-row">
+          <div>
+            <p class="row-label">वाचन मोड</p>
+            <p class="row-desc">फोकस मोडमध्ये सध्याचा कडवा उठून दिसतो</p>
+          </div>
+          <div class="segmented" data-mode-segmented>
+            <button data-mode-option="normal">सामान्य</button>
+            <button data-mode-option="focus">फोकस</button>
+          </div>
+        </div>
+        <div class="settings-row">
+          <div>
+            <p class="row-label">गती कमी करा</p>
+            <p class="row-desc">अ‍ॅनिमेशन्स कमीत कमी करा</p>
+          </div>
+          <button class="switch" data-reduce-motion-switch role="switch" aria-checked="false" aria-label="गती कमी करा"></button>
+        </div>
+      </div>
+
+      <div class="settings-group">
+        <a class="settings-row" href="favorites.html" style="text-decoration:none;">
+          <div>
+            <p class="row-label">माझ्या आवडत्या आरत्या</p>
+            <p class="row-desc" data-fav-count-desc>0 आरत्या जतन केल्या</p>
+          </div>
+          <i data-lucide="chevron-right" style="color:var(--text-muted);"></i>
+        </a>
+        <button class="settings-row" data-clear-data style="width:100%; text-align:left;">
+          <div>
+            <p class="row-label" style="color:#e0836b;">सर्व डेटा साफ करा</p>
+            <p class="row-desc">आवडत्या, इतिहास व चिन्हांकने कायमची पुसली जातील</p>
+          </div>
+          <i data-lucide="trash-2" style="color:#e0836b;"></i>
+        </button>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-brand">आरती संग्रहालय</p>
+    <p class="footer-tagline">भक्ती • परंपरा • संस्कृती</p>
+    <div class="footer-links">
+      <a href="index.html">मुख्यपृष्ठ</a>
+      <a href="list.html">आरत्या</a>
+      <a href="categories.html">श्रेणी</a>
+      <a href="favorites.html">आवडत्या</a>
+      <a href="about.html">आमच्याबद्दल</a>
+    </div>
+    <p class="footer-copy">© <span data-year></span> आरती संग्रहालय</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="data/aartis.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const fontButtons = document.querySelectorAll("[data-font-option]");
+    const modeButtons = document.querySelectorAll("[data-mode-option]");
+    const motionSwitch = document.querySelector("[data-reduce-motion-switch]");
+    const favDesc = document.querySelector("[data-fav-count-desc]");
+    const clearBtn = document.querySelector("[data-clear-data]");
+
+    function syncFont() {
+      const cur = Storage.getFontSize();
+      fontButtons.forEach((b) => b.classList.toggle("is-active", b.getAttribute("data-font-option") === cur));
+    }
+    function syncMode() {
+      const cur = Storage.getReadingMode();
+      modeButtons.forEach((b) => b.classList.toggle("is-active", b.getAttribute("data-mode-option") === cur));
+    }
+    function syncMotion() {
+      const on = Storage.getSettings().reduceMotion;
+      motionSwitch.classList.toggle("is-on", on);
+      motionSwitch.setAttribute("aria-checked", String(on));
+    }
+
+    fontButtons.forEach((b) =>
+      b.addEventListener("click", () => {
+        Storage.setFontSize(b.getAttribute("data-font-option"));
+        syncFont();
+      })
+    );
+    modeButtons.forEach((b) =>
+      b.addEventListener("click", () => {
+        Storage.setReadingMode(b.getAttribute("data-mode-option"));
+        syncMode();
+      })
+    );
+    motionSwitch.addEventListener("click", () => {
+      const current = Storage.getSettings().reduceMotion;
+      Storage.setSettings({ reduceMotion: !current });
+      syncMotion();
+    });
+
+    favDesc.textContent = `${Storage.getFavorites().length} आरत्या जतन केल्या`;
+
+    clearBtn.addEventListener("click", () => {
+      if (confirm("तुम्हाला खात्री आहे की सर्व जतन केलेला डेटा (आवडत्या, इतिहास, चिन्हांकने) पुसायचा आहे?")) {
+        ["favorites", "recent", "fontSize", "readingMode", "markers", "settings"].forEach((k) => Storage.remove(k));
+        syncFont();
+        syncMode();
+        syncMotion();
+        favDesc.textContent = "0 आरत्या जतन केल्या";
+      }
+    });
+
+    syncFont();
+    syncMode();
+    syncMotion();
+  });
+</script>
+</body>
+</html>

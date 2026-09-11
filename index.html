@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>आरती संग्रहालय — भक्ती, परंपरा, संस्कृती</title>
+<meta name="description" content="मराठी आरत्यांचा प्रीमियम डिजिटल संग्रह — वाचा, ऐका, आवडती जतन करा." />
+<meta name="theme-color" content="#0B0A09" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="om">ॐ</span> आरती संग्रहालय</a>
+    <nav class="main-nav" aria-label="मुख्य दुवे">
+      <a data-nav-link href="index.html">मुख्यपृष्ठ</a>
+      <a data-nav-link href="list.html">आरत्या</a>
+      <a data-nav-link href="categories.html">श्रेणी</a>
+      <a data-nav-link href="favorites.html">आवडत्या</a>
+      <a data-nav-link href="settings.html">सेटिंग्ज</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn menu-toggle" data-menu-toggle aria-label="मेनू उघडा" aria-expanded="false" aria-controls="mobile-menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav id="mobile-menu" class="mobile-menu" data-menu-panel aria-label="मोबाइल मेनू">
+  <ul>
+    <li><a data-nav-link href="index.html">मुख्यपृष्ठ</a></li>
+    <li><a data-nav-link href="list.html">आरत्या</a></li>
+    <li><a data-nav-link href="categories.html">श्रेणी</a></li>
+    <li><a data-nav-link href="favorites.html">आवडत्या</a></li>
+    <li><a data-nav-link href="settings.html">सेटिंग्ज</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="hero container">
+    <p class="eyebrow" data-entrance>॥ श्री गणेशाय नमः ॥</p>
+    <h1 data-entrance>आरती संग्रहालय</h1>
+    <div class="ornament" data-entrance></div>
+    <p class="tagline" data-entrance>भक्ती • परंपरा • संस्कृती</p>
+
+    <div style="margin-top:30px;" data-entrance>
+      <form class="search-bar" data-home-search role="search" aria-label="आरती शोधा">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <label for="home-search-input" class="visually-hidden">आरती शोधा</label>
+        <input id="home-search-input" type="search" name="q" placeholder="आरती शोधा..." autocomplete="off" />
+      </form>
+    </div>
+  </section>
+
+  <section class="section container" data-entrance>
+    <div class="section-head">
+      <h2>आजची आरती</h2>
+    </div>
+    <div data-featured-aarti></div>
+  </section>
+
+  <section class="section container" data-entrance>
+    <div class="section-head">
+      <h2>लोकप्रिय आरत्या</h2>
+      <a class="see-all" href="list.html">सर्व पहा →</a>
+    </div>
+    <div class="chip-row" data-category-chips></div>
+    <div class="card-grid" style="margin-top:18px;" data-popular-grid></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-brand">आरती संग्रहालय</p>
+    <p class="footer-tagline">भक्ती • परंपरा • संस्कृती</p>
+    <div class="footer-links">
+      <a href="index.html">मुख्यपृष्ठ</a>
+      <a href="list.html">आरत्या</a>
+      <a href="categories.html">श्रेणी</a>
+      <a href="favorites.html">आवडत्या</a>
+      <a href="about.html">आमच्याबद्दल</a>
+    </div>
+    <p class="footer-copy">© <span data-year></span> आरती संग्रहालय</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="data/aartis.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+<script src="js/aarti.js"></script>
+<script src="js/search.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Featured Aarti
+    const featured = AARTI_DATA[0];
+    const featuredHost = document.querySelector("[data-featured-aarti]");
+    if (featured && featuredHost) {
+      const cat = AppUtils.byCategory(featured.category);
+      featuredHost.innerHTML = `
+        <article class="featured-card">
+          <span class="card-deity"><i data-lucide="${cat ? cat.icon : "flower-2"}"></i> ${AppUtils.esc(featured.deity)}</span>
+          <h3>${AppUtils.esc(featured.title)}</h3>
+          <p>${AppUtils.esc(AppUtils.firstLine(featured))}</p>
+          <a class="btn btn-primary" href="aarti.html?id=${encodeURIComponent(featured.id)}">
+            वाचा
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>`;
+      if (window.lucide) lucide.createIcons();
+    }
+
+    // Category chips
+    AartiCards.renderChips(document.querySelector("[data-category-chips]"));
+
+    // Popular grid — first 6 aartis
+    AartiCards.renderCards(document.querySelector("[data-popular-grid]"), AARTI_DATA.slice(0, 6));
+
+    // Home search -> redirect to list.html?q=
+    const form = document.querySelector("[data-home-search]");
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const q = form.querySelector("input").value.trim();
+        window.location.href = "list.html" + (q ? `?q=${encodeURIComponent(q)}` : "");
+      });
+    }
+  });
+</script>
+</body>
+</html>

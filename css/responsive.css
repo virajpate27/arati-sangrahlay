@@ -1,0 +1,111 @@
+/* ==========================================================
+   आरती संग्रहालय — responsive.css
+   Mobile is the baseline (defined in main.css / components.css).
+   Rules below progressively enhance for larger viewports.
+   ========================================================== */
+
+/* ---------- ≥ 640px : large phones / small tablets ---------- */
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- ≥ 768px : tablets ---------- */
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 32px;
+  }
+
+  .hero {
+    padding: 64px 0 40px;
+  }
+
+  .site-header .menu-toggle {
+    display: none;
+  }
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  /* Reading page: bring in the verse rail, retire mobile chrome */
+  .verse-rail {
+    display: flex;
+  }
+  .verse-indicator {
+    display: none;
+  }
+  .control-bar {
+    position: static;
+    justify-content: center;
+    gap: 10px;
+    background: transparent;
+    border-top: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 6px 0 0;
+  }
+  .control-bar .divider {
+    display: block;
+  }
+  .reader-body {
+    padding-bottom: 60px;
+  }
+}
+
+/* ---------- ≥ 1024px : desktop ---------- */
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .category-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 5vw, 3.6rem);
+  }
+
+  .reader-body {
+    gap: 60px;
+  }
+  .verse-rail {
+    width: 180px;
+  }
+}
+
+/* ---------- ≥ 1440px : large desktop ---------- */
+@media (min-width: 1440px) {
+  .container {
+    padding-inline: 40px;
+  }
+}
+
+/* ---------- small phones ---------- */
+@media (max-width: 374px) {
+  .container {
+    padding-inline: 14px;
+  }
+  .aarti-verse {
+    padding: 20px 16px;
+  }
+}
