@@ -81,6 +81,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 150px;
 }
 .aarti-card .card-meta {
   margin-top: 14px;
